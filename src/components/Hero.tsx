@@ -1,21 +1,26 @@
-
-import { Github, Linkedin, Mail, Download, ArrowDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const scrollToNext = () => {
-    const aboutSection = document.querySelector('#about');
+    const aboutSection = document.querySelector("#about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      aboutSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
 
       <div className="container-width section-padding text-center relative z-10">
@@ -27,26 +32,45 @@ const Hero = () => {
             Frontend Developer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Crafting exceptional digital experiences with modern web technologies. 
-            Passionate about React, TypeScript, and building innovative solutions that make a difference.
+            Crafting exceptional digital experiences with modern web
+            technologies. Passionate about React, TypeScript, and building
+            innovative solutions that make a difference.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="group" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
+            <Button
+              size="lg"
+              className="group"
+              onClick={() =>
+                document
+                  .querySelector("#contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
               <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
               Get In Touch
             </Button>
-            <Button variant="outline" size="lg" className="group">
-              <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-              Download Resume
+            <Button variant="outline" size="lg" className="group" asChild>
+              <a href="/Sultonqul_Nortoyloqov.pdf" download>
+                <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                Download Resume
+              </a>
             </Button>
           </div>
 
           <div className="flex justify-center space-x-6">
             {[
-              { icon: Github, href: 'https://github.com/sultonqulnd', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com/in/sultonqul', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:me@sultonqul.uz', label: 'Email' }
+              {
+                icon: Github,
+                href: "https://github.com/sultonqulnd",
+                label: "GitHub",
+              },
+              {
+                icon: Linkedin,
+                href: "https://linkedin.com/in/sultonqul",
+                label: "LinkedIn",
+              },
+              { icon: Mail, href: "mailto:me@sultonqul.uz", label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

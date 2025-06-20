@@ -1,42 +1,70 @@
-
-import { useState } from 'react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "me@sultonqul.uz",
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        templateParams,
+        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+      );
+
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Failed to send message",
+        description:
+          "Please try again or contact me directly at me@sultonqul.uz",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -44,20 +72,20 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       value: "me@sultonqul.uz",
-      href: "mailto:me@sultonqul.uz"
+      href: "mailto:me@sultonqul.uz",
     },
     {
       icon: Phone,
       title: "Phone",
       value: "+998 91 644 11 00",
-      href: "tel:+998916441100"
+      href: "tel:+998916441100",
     },
     {
       icon: MapPin,
       title: "Location",
       value: "Tashkent, Uzbekistan",
-      href: "https://maps.google.com"
-    }
+      href: "https://maps.google.com",
+    },
   ];
 
   return (
@@ -68,8 +96,9 @@ const Contact = () => {
             Let's Work Together
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind or want to discuss opportunities? 
-            I'd love to hear from you and explore how we can create something amazing together.
+            Have a project in mind or want to discuss opportunities? I'd love to
+            hear from you and explore how we can create something amazing
+            together.
           </p>
         </div>
 
@@ -121,9 +150,9 @@ const Contact = () => {
                       required
                     />
                   </div>
-                  <Button 
-                    type="submit" 
-                    size="lg" 
+                  <Button
+                    type="submit"
+                    size="lg"
                     className="w-full"
                     disabled={isSubmitting}
                   >
@@ -145,9 +174,10 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get in touch</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always interested in new opportunities, whether it's a full-time position, 
-                freelance project, or just a chat about technology. Feel free to reach out through 
-                any of the channels below.
+                I'm always interested in new opportunities, whether it's a
+                full-time position, freelance project, or just a chat about
+                technology. Feel free to reach out through any of the channels
+                below.
               </p>
             </div>
 
@@ -156,8 +186,10 @@ const Contact = () => {
                 <a
                   key={item.title}
                   href={item.href}
-                  target={item.href.startsWith('http') ? '_blank' : '_self'}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                  target={item.href.startsWith("http") ? "_blank" : "_self"}
+                  rel={
+                    item.href.startsWith("http") ? "noopener noreferrer" : ""
+                  }
                   className="flex items-center space-x-4 p-4 rounded-lg border border-border hover:border-primary transition-all duration-200 hover:bg-primary/5 animate-fade-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
