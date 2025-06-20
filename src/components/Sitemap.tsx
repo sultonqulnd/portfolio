@@ -7,31 +7,31 @@ const Sitemap = () => {
     const sitemapData = {
       urls: [
         {
-          loc: 'https://alexjohnson.dev/',
+          loc: 'https://sultonqul.uz/',
           lastmod: new Date().toISOString(),
           changefreq: 'monthly',
           priority: '1.0'
         },
         {
-          loc: 'https://alexjohnson.dev/#about',
+          loc: 'https://sultonqul.uz/#about',
           lastmod: new Date().toISOString(),
           changefreq: 'monthly',
           priority: '0.8'
         },
         {
-          loc: 'https://alexjohnson.dev/#projects',
+          loc: 'https://sultonqul.uz/#projects',
           lastmod: new Date().toISOString(),
           changefreq: 'weekly',
           priority: '0.9'
         },
         {
-          loc: 'https://alexjohnson.dev/#skills',
+          loc: 'https://sultonqul.uz/#skills',
           lastmod: new Date().toISOString(),
           changefreq: 'monthly',
           priority: '0.7'
         },
         {
-          loc: 'https://alexjohnson.dev/#contact',
+          loc: 'https://sultonqul.uz/#contact',
           lastmod: new Date().toISOString(),
           changefreq: 'monthly',
           priority: '0.8'

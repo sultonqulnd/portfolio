@@ -11,21 +11,21 @@ interface SEOProps {
 }
 
 const SEO = ({ 
-  title = "Alex Johnson - Senior Frontend Developer",
-  description = "Senior Frontend Developer specializing in React, TypeScript, and modern web technologies. Portfolio showcasing innovative projects and technical expertise.",
-  keywords = "frontend developer, react developer, typescript, javascript, web development, portfolio, senior developer, alex johnson",
+  title = "Sultonqul Nortoyloqov - Frontend Developer",
+  description = "Frontend Developer specializing in React, TypeScript, and modern web technologies. Portfolio showcasing innovative projects and technical expertise.",
+  keywords = "frontend developer, react developer, typescript, javascript, web development, portfolio, sultonqul nortoyloqov, nextjs, tailwindcss",
   image = "https://lovable.dev/opengraph-image-p98pqg.png",
-  url = "https://alexjohnson.dev",
+  url = "https://sultonqul.uz",
   type = "website"
 }: SEOProps) => {
-  const fullTitle = title.includes("Alex Johnson") ? title : `${title} | Alex Johnson`;
+  const fullTitle = title.includes("Sultonqul") ? title : `${title} | Sultonqul Nortoyloqov`;
   
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Alex Johnson" />
+      <meta name="author" content="Sultonqul Nortoyloqov" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
@@ -33,7 +33,7 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="Alex Johnson Portfolio" />
+      <meta property="og:site_name" content="Sultonqul Nortoyloqov Portfolio" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -41,8 +41,6 @@ const SEO = ({
       <meta property="twitter:title" content={fullTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
-      <meta property="twitter:site" content="@alexjohnson_dev" />
-      <meta property="twitter:creator" content="@alexjohnson_dev" />
 
       {/* Additional SEO */}
       <meta name="robots" content="index, follow" />
@@ -54,33 +52,30 @@ const SEO = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          "name": "Alex Johnson",
-          "jobTitle": "Senior Frontend Developer",
+          "name": "Sultonqul Nortoyloqov",
+          "jobTitle": "Frontend Developer",
           "description": description,
           "url": url,
           "image": image,
           "sameAs": [
-            "https://github.com",
-            "https://linkedin.com",
-            "https://twitter.com/alexjohnson_dev"
+            "https://github.com/sultonqulnd",
+            "https://linkedin.com/in/sultonqul"
           ],
           "knowsAbout": [
-            "React",
-            "TypeScript",
             "JavaScript",
+            "TypeScript",
+            "React",
             "Next.js",
-            "Node.js",
+            "TailwindCSS",
+            "Redux",
+            "React Query",
             "Web Development",
-            "Frontend Development",
-            "UI/UX Design"
+            "Frontend Development"
           ],
-          "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "University of Technology"
-          },
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Freelance"
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tashkent",
+            "addressCountry": "Uzbekistan"
           }
         })}
       </script>

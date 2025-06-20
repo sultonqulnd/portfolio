@@ -34,9 +34,8 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate frontend developer with over 6 years of experience building 
-            exceptional digital products. I specialize in React, TypeScript, and modern web technologies, 
-            with a keen eye for design and user experience.
+            I'm a passionate frontend developer specializing in React, TypeScript, and modern web technologies. 
+            I love creating intuitive user interfaces and bringing ideas to life through code.
           </p>
         </header>
 
@@ -49,8 +48,8 @@ const About = () => {
                   <div className="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Code className="h-12 w-12 text-primary" />
                   </div>
-                  <p className="text-2xl font-semibold">6+ Years</p>
-                  <p className="text-muted-foreground">Experience</p>
+                  <p className="text-2xl font-semibold">Frontend</p>
+                  <p className="text-muted-foreground">Developer</p>
                 </div>
               </div>
             </div>
@@ -63,12 +62,13 @@ const About = () => {
               I believe that great software is not just functional, but also beautiful and accessible to everyone.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-              or sharing my knowledge through technical writing and mentoring other developers.
+              Based in Tashkent, Uzbekistan, I enjoy working with modern technologies like React, Next.js, 
+              and TypeScript to build scalable applications. When I'm not coding, you'll find me exploring 
+              new technologies and contributing to the developer community.
             </p>
             
             <div className="flex flex-wrap gap-2 mt-6" role="list" aria-label="Technologies I work with">
-              {['React', 'TypeScript', 'Next.js', 'Node.js', 'GraphQL', 'Docker'].map((tech) => (
+              {['React', 'TypeScript', 'Next.js', 'TailwindCSS', 'Redux', 'React Query'].map((tech) => (
                 <span key={tech} className="tech-badge" role="listitem">
                   {tech}
                 </span>

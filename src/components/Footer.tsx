@@ -5,9 +5,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:alex@example.com', label: 'Email' }
+    { icon: Github, href: 'https://github.com/sultonqulnd', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/sultonqul', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:me@sultonqul.uz', label: 'Email' }
   ];
 
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container-width section-padding">
         <div className="flex flex-col items-center space-y-6">
           <div className="text-2xl font-bold gradient-text">
-            Alex Johnson
+            Sultonqul Nortoyloqov
           </div>
           
           <div className="flex space-x-6">
@@ -35,7 +35,7 @@ const Footer = () => {
 
           <div className="text-center text-muted-foreground">
             <p className="flex items-center justify-center gap-1">
-              © {currentYear} Alex Johnson. Made with <Heart className="h-4 w-4 text-red-500" /> using React & TypeScript
+              © {currentYear} Sultonqul Nortoyloqov. Made with <Heart className="h-4 w-4 text-red-500" /> using React & TypeScript
             </p>
           </div>
         </div>

@@ -4,43 +4,43 @@ import { Card, CardContent } from '@/components/ui/card';
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Frontend Technologies",
       skills: [
-        { name: "React", level: 95 },
+        { name: "JavaScript", level: 95 },
         { name: "TypeScript", level: 90 },
+        { name: "React", level: 95 },
         { name: "Next.js", level: 88 },
-        { name: "Vue.js", level: 75 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "HTML/CSS", level: 98 }
+        { name: "TailwindCSS", level: 92 },
+        { name: "styled-components", level: 85 }
       ]
     },
     {
-      title: "Backend & Tools",
+      title: "UI Libraries & State Management",
       skills: [
-        { name: "Node.js", level: 82 },
-        { name: "GraphQL", level: 78 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Git", level: 95 }
+        { name: "MUI", level: 88 },
+        { name: "Ant Design", level: 85 },
+        { name: "Redux", level: 90 },
+        { name: "Zustand", level: 85 },
+        { name: "React Query", level: 88 },
+        { name: "RTK Query", level: 82 }
       ]
     },
     {
-      title: "Design & Others",
+      title: "Tools & Others",
       skills: [
-        { name: "Figma", level: 85 },
-        { name: "UI/UX Design", level: 80 },
-        { name: "Jest/Testing", level: 88 },
-        { name: "Webpack", level: 75 },
-        { name: "Performance", level: 90 },
-        { name: "Accessibility", level: 85 }
+        { name: "React Hooks", level: 95 },
+        { name: "Context API", level: 90 },
+        { name: "REST API", level: 92 },
+        { name: "Socket.io", level: 80 },
+        { name: "Firebase", level: 85 },
+        { name: "Git/GitHub", level: 90 }
       ]
     }
   ];
 
   const tools = [
-    "VS Code", "Figma", "Postman", "Chrome DevTools", "Jira", "Slack",
-    "GitHub", "Vercel", "Netlify", "Firebase", "Supabase", "Prisma"
+    "VS Code", "Git", "GitHub", "GitLab", "Lodash", "Firebase",
+    "Vercel", "Netlify", "Postman", "Chrome DevTools", "Figma", "Slack"
   ];
 
   return (

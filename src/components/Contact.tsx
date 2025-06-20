@@ -43,19 +43,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "alex@example.com",
-      href: "mailto:alex@example.com"
+      value: "me@sultonqul.uz",
+      href: "mailto:me@sultonqul.uz"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+998 91 644 11 00",
+      href: "tel:+998916441100"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Tashkent, Uzbekistan",
       href: "https://maps.google.com"
     }
   ];

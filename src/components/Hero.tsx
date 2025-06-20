@@ -21,18 +21,18 @@ const Hero = () => {
       <div className="container-width section-padding text-center relative z-10">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="gradient-text">Alex Johnson</span>
+            <span className="gradient-text">Sultonqul Nortoyloqov</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
-            Senior Frontend Developer
+            Frontend Developer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
             Crafting exceptional digital experiences with modern web technologies. 
-            Passionate about clean code, innovative solutions, and pushing the boundaries of what's possible on the web.
+            Passionate about React, TypeScript, and building innovative solutions that make a difference.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="group">
+            <Button size="lg" className="group" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
               <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
               Get In Touch
             </Button>
@@ -44,9 +44,9 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-6">
             {[
-              { icon: Github, href: 'https://github.com', label: 'GitHub' },
-              { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-              { icon: Mail, href: 'mailto:alex@example.com', label: 'Email' }
+              { icon: Github, href: 'https://github.com/sultonqulnd', label: 'GitHub' },
+              { icon: Linkedin, href: 'https://linkedin.com/in/sultonqul', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:me@sultonqul.uz', label: 'Email' }
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
