@@ -6,10 +6,12 @@ import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEO />
       <Header />
       <main>
         <Hero />
