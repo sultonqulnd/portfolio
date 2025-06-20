@@ -43,7 +43,7 @@ const Header = () => {
       <nav className="container-width section-padding py-4">
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold gradient-text">
-            AJ
+            SN
           </div>
 
           {/* Desktop Navigation */}
