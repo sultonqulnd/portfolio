@@ -98,9 +98,9 @@ const Contact = () => {
             Let's Work Together
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind or want to discuss opportunities? I'd love to
-            hear from you and explore how we can create something amazing
-            together.
+            Have a project in mind or want to discuss opportunities? I&apos;d
+            love to hear from you and explore how we can create something
+            amazing together.
           </p>
         </div>
 
@@ -176,10 +176,10 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Get in touch</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always interested in new opportunities, whether it's a
-                full-time position, freelance project, or just a chat about
-                technology. Feel free to reach out through any of the channels
-                below.
+                I&apos;m always interested in new opportunities, whether
+                it&apos;s a full-time position, freelance project, or just a
+                chat about technology. Feel free to reach out through any of the
+                channels below.
               </p>
             </div>
 
