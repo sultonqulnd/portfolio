@@ -17,7 +17,7 @@ export const projects = [
     tech: ["React", "TypeScript", "Node.js", "Database", "API"],
     liveUrl: "https://srms.ptu.uz/",
     githubUrl: null,
-    featured: true,
+    featured: false,
   },
   {
     title: "Application & HRM Admin Dashboard",
@@ -121,6 +121,6 @@ export const projects = [
     ],
     liveUrl: "http://mymocks.uz/",
     githubUrl: null,
-    featured: true,
+    featured: false,
   },
 ];
