@@ -75,7 +75,7 @@ export const projects = [
     title: "KeshTrade Website & CRM",
     description:
       "Developed a company website and CRM system for managing sales, customer interactions, and internal data. Complete business management solution.",
-    image: "/project_screenshots/keshtrade.png",
+    image: "/project_screenshots/keshtrade.avif",
     tech: ["React", "TypeScript", "CRM", "Sales Management", "Business"],
     liveUrl: "https://keshtrade.uz/",
     githubUrl: null,
