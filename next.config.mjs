@@ -6,10 +6,10 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@": require("path").resolve(__dirname, "src"),
+      "@": new URL("src", import.meta.url).pathname,
     };
     return config;
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
