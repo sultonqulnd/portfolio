@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
+import { emailjsConfig, EmailTemplateParams } from "@/lib/emailjs-config";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,20 +35,21 @@ const Contact = () => {
 
     try {
       // EmailJS configuration
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+      const templateParams: EmailTemplateParams = {
+        name: formData.name,
+        email: formData.email,
         subject: formData.subject,
         message: formData.message,
+        time: new Date().toLocaleString(),
         to_email: "me@sultonqul.uz",
       };
 
       // Send email using EmailJS
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
         templateParams,
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+        emailjsConfig.publicKey
       );
 
       toast({
