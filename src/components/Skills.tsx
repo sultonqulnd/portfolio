@@ -1,5 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import Reveal from "@/components/Reveal";
 
 const Skills = () => {
   const skillCategories = [
@@ -67,71 +68,74 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-card/30">
       <div className="container-width section-padding">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Skills & Expertise
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A resume-backed toolkit for building scalable frontend systems,
-            admin dashboards, real-time workflows, and production-ready web
-            applications.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+              Skills & Expertise
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              A resume-backed toolkit for building scalable frontend systems,
+              admin dashboards, real-time workflows, and production-ready web
+              applications.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {skillCategories.map((category, categoryIndex) => (
-            <Card
-              key={category.title}
-              className="animate-fade-in"
-              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
-            >
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-6 text-center">
-                  {category.title}
-                </h3>
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div
-                      key={skill.name}
-                      className="animate-slide-in"
-                      style={{
-                        animationDelay: `${
-                          categoryIndex * 0.1 + skillIndex * 0.05
-                        }s`,
-                      }}
-                    >
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
+            <Reveal key={category.title} delay={categoryIndex * 100}>
+              <Card className="card-hover h-full">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-6 text-center">
+                    {category.title}
+                  </h3>
+                  <div className="space-y-4">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div key={skill.name}>
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium">
+                            {skill.name}
+                          </span>
+                          <span className="text-xs text-muted-foreground">
+                            {skill.level}%
+                          </span>
+                        </div>
+                        <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                          <div
+                            className="h-2 rounded-full bg-gradient-to-r from-cyan-300 via-primary to-emerald-300 transition-all duration-1000 ease-out"
+                            style={{
+                              width: `${skill.level}%`,
+                              transitionDelay: `${skillIndex * 80}ms`,
+                            }}
+                          ></div>
+                        </div>
                       </div>
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <div
-                          className="bg-gradient-to-r from-primary to-electric-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </Reveal>
           ))}
         </div>
 
-        <div className="text-center animate-fade-in">
-          <h3 className="text-2xl font-semibold mb-8">Tools & Technologies</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {tools.map((tool, index) => (
-              <span
-                key={tool}
-                className="tech-badge hover:bg-primary/20 hover:border-primary/40 transition-all duration-200 cursor-default animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                {tool}
-              </span>
-            ))}
+        <Reveal>
+          <div className="text-center">
+            <h3 className="text-2xl font-semibold mb-8">
+              Tools & Technologies
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {tools.map((tool, index) => (
+                <span
+                  key={tool}
+                  className="tech-badge cursor-default"
+                  style={{ transitionDelay: `${index * 20}ms` }}
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,19 +47,26 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(56, 189, 248, 0.1) 0%, transparent 50%);
+    background:
+      linear-gradient(180deg, rgba(4, 9, 18, 0.96), rgba(4, 9, 18, 1)),
+      hsl(var(--background));
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
 }
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-300 via-blue-400 to-emerald-300 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
   }
   
   .section-padding {
@@ -71,10 +78,199 @@
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20;
+    @apply relative overflow-hidden border border-border/80 bg-card/80 transition-all duration-500;
+    transform: translateZ(0);
+  }
+
+  .card-hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.12) 38%,
+        transparent 58%
+      );
+    opacity: 0;
+    transform: translateX(-120%);
+    transition:
+      opacity 400ms ease,
+      transform 900ms ease;
+  }
+
+  .card-hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      circle at var(--spotlight-x, 50%) var(--spotlight-y, 0%),
+      rgba(125, 211, 252, 0.18),
+      transparent 38%
+    );
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  .card-hover:hover {
+    @apply border-primary/40 shadow-2xl shadow-primary/20;
+    transform: translateY(-8px);
+  }
+
+  .card-hover:hover::before {
+    opacity: 1;
+    transform: translateX(120%);
+  }
+
+  .card-hover:hover::after {
+    opacity: 1;
   }
   
   .tech-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20;
+    @apply inline-flex items-center rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-medium text-cyan-100 transition-all duration-300;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .tech-badge:hover {
+    @apply border-primary/50 bg-primary/20;
+    transform: translateY(-2px);
+  }
+
+  .site-background {
+    @apply pointer-events-none fixed inset-0 -z-10 overflow-hidden;
+  }
+
+  .site-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, black, transparent 86%);
+    animation: grid-drift 24s linear infinite;
+  }
+
+  .aurora-layer {
+    position: absolute;
+    inset: -24% -12%;
+    filter: blur(42px);
+    opacity: 0.48;
+    mix-blend-mode: screen;
+  }
+
+  .aurora-layer-one {
+    background:
+      linear-gradient(115deg, transparent 12%, rgba(14, 165, 233, 0.2) 34%, transparent 54%),
+      linear-gradient(145deg, transparent 22%, rgba(16, 185, 129, 0.16) 44%, transparent 66%);
+    animation: aurora-drift 18s ease-in-out infinite alternate;
+  }
+
+  .aurora-layer-two {
+    background:
+      linear-gradient(70deg, transparent 18%, rgba(99, 102, 241, 0.18) 42%, transparent 60%),
+      linear-gradient(155deg, transparent 35%, rgba(251, 191, 36, 0.1) 50%, transparent 68%);
+    animation: aurora-drift-reverse 22s ease-in-out infinite alternate;
+  }
+
+  .noise-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image:
+      linear-gradient(120deg, rgba(255,255,255,0.05), transparent 18%),
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04) 0,
+        rgba(255, 255, 255, 0.04) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+  }
+
+  .hero-shell {
+    @apply relative rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-2xl shadow-primary/10 backdrop-blur-md md:p-10;
+  }
+
+  .hero-shell::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(125, 211, 252, 0.4), transparent 35%, rgba(52, 211, 153, 0.26));
+    opacity: 0.6;
+  }
+
+  .ticker-mask {
+    mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+  }
+
+  .ticker-track {
+    animation: ticker 22s linear infinite;
+  }
+
+  .timeline-line {
+    background: linear-gradient(to bottom, transparent, hsl(var(--primary)), transparent);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes grid-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(64px, 64px, 0);
+  }
+}
+
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(-4%, -2%, 0) rotate(-2deg);
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) rotate(3deg);
+  }
+}
+
+@keyframes aurora-drift-reverse {
+  from {
+    transform: translate3d(3%, 2%, 0) rotate(2deg);
+  }
+  to {
+    transform: translate3d(-3%, -4%, 0) rotate(-3deg);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
   }
 }

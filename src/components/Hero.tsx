@@ -11,6 +11,25 @@ import {
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const stats = [
+    { value: "5+", label: "Years building products" },
+    { value: "500+", label: "ERP components shipped" },
+    { value: "400+", label: "Frontend students mentored" },
+  ];
+
+  const tickerItems = [
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Vue",
+    "Nuxt",
+    "RBAC",
+    "ERP",
+    "GraphQL",
+    "WebSockets",
+    "CI/CD",
+  ];
+
   const scrollToNext = () => {
     const aboutSection = document.querySelector("#about");
     if (aboutSection) {
@@ -21,19 +40,18 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-electric-500/20 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
-
       <div className="container-width section-padding text-center relative z-10">
         <div className="animate-fade-in">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-cyan-100 shadow-lg shadow-primary/10 backdrop-blur">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300" />
+            </span>
+            Available for senior frontend opportunities
+          </div>
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="gradient-text">Sultonqul Nortoyloqov</span>
           </h1>
@@ -101,6 +119,31 @@ const Hero = () => {
                 <Icon className="h-5 w-5 group-hover:text-primary transition-colors" />
               </a>
             ))}
+          </div>
+
+          <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-3">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className="card-hover rounded-xl px-5 py-4 text-left animate-fade-in"
+                style={{ animationDelay: `${index * 120 + 300}ms` }}
+              >
+                <p className="text-3xl font-bold gradient-text">{stat.value}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="ticker-mask mx-auto mt-10 max-w-4xl overflow-hidden border-y border-border/60 py-4">
+            <div className="ticker-track flex w-max gap-3">
+              {[...tickerItems, ...tickerItems].map((item, index) => (
+                <span key={`${item}-${index}`} className="tech-badge">
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

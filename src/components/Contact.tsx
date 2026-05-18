@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 import { emailjsConfig, EmailTemplateParams } from "@/lib/emailjs-config";
+import Reveal from "@/components/Reveal";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -95,20 +96,22 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20">
       <div className="container-width section-padding">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Let's Work Together
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind or want to discuss opportunities? I&apos;d
-            love to hear from you and explore how we can create something
-            reliable, scalable, and production-ready together.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+              Let&apos;s Work Together
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Have a project in mind or want to discuss opportunities? I&apos;d
+              love to hear from you and explore how we can create something
+              reliable, scalable, and production-ready together.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          <div className="animate-slide-in">
-            <Card>
+          <Reveal direction="right">
+            <Card className="card-hover">
               <CardHeader>
                 <CardTitle>Send me a message</CardTitle>
               </CardHeader>
@@ -172,48 +175,50 @@ const Contact = () => {
                 </form>
               </CardContent>
             </Card>
-          </div>
+          </Reveal>
 
-          <div className="space-y-8 animate-fade-in">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Get in touch</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                I&apos;m always interested in new opportunities, whether
-                it&apos;s a full-time position, freelance project, or just a
-                chat about technology. Feel free to reach out through any of the
-                channels below.
-              </p>
-            </div>
+          <Reveal direction="left" delay={100}>
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">Get in touch</h3>
+                <p className="text-muted-foreground mb-8 leading-relaxed">
+                  I&apos;m always interested in new opportunities, whether
+                  it&apos;s a full-time position, freelance project, or just a
+                  chat about technology. Feel free to reach out through any of
+                  the channels below.
+                </p>
+              </div>
 
-            <div className="space-y-6">
-              {contactInfo.map((item, index) => (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : "_self"}
-                  rel={
-                    item.href.startsWith("http") ? "noopener noreferrer" : ""
-                  }
-                  className="flex items-center space-x-4 p-4 rounded-lg border border-border hover:border-primary transition-all duration-200 hover:bg-primary/5 animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                    <item.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.value}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
+              <div className="space-y-6">
+                {contactInfo.map((item, index) => (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : "_self"}
+                    rel={
+                      item.href.startsWith("http") ? "noopener noreferrer" : ""
+                    }
+                    className="card-hover flex items-center space-x-4 rounded-lg p-4"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <item.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium">{item.title}</h4>
+                      <p className="text-muted-foreground">{item.value}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
 
-            <div className="pt-8 border-t border-border">
-              <p className="text-muted-foreground text-center">
-                Response time: Usually within 24 hours
-              </p>
+              <div className="pt-8 border-t border-border">
+                <p className="text-muted-foreground text-center">
+                  Response time: Usually within 24 hours
+                </p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

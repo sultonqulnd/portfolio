@@ -1,5 +1,6 @@
 import { Briefcase, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Reveal from "@/components/Reveal";
 
 const experiences = [
   {
@@ -81,69 +82,76 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20">
       <div className="container-width section-padding">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Experience
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Frontend engineering work across enterprise ERP systems, admin
-            dashboards, SEO web portals, education platforms, and mentoring.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+              Experience
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Frontend engineering work across enterprise ERP systems, admin
+              dashboards, SEO web portals, education platforms, and mentoring.
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-6 mb-12">
+        <div className="relative grid lg:grid-cols-2 gap-6 mb-12">
+          <div className="timeline-line absolute left-1/2 top-4 hidden h-[calc(100%-2rem)] w-px -translate-x-1/2 lg:block" />
           {experiences.map((experience, index) => (
-            <Card
+            <Reveal
               key={`${experience.company}-${experience.period}`}
-              className="card-hover animate-fade-in"
-              style={{ animationDelay: `${index * 0.08}s` }}
+              delay={index * 70}
+              direction={index % 2 === 0 ? "right" : "left"}
             >
-              <CardHeader>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center shrink-0">
-                    <Briefcase className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl mb-1">
-                      {experience.company}
-                    </CardTitle>
-                    <p className="font-medium text-primary">
-                      {experience.role}
-                    </p>
-                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
-                      <span>{experience.period}</span>
-                      <span className="inline-flex items-center gap-1">
-                        <MapPin className="h-3.5 w-3.5" />
-                        {experience.location}
-                      </span>
+              <Card className="card-hover h-full">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center shrink-0">
+                      <Briefcase className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl mb-1">
+                        {experience.company}
+                      </CardTitle>
+                      <p className="font-medium text-primary">
+                        {experience.role}
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                        <span>{experience.period}</span>
+                        <span className="inline-flex items-center gap-1">
+                          <MapPin className="h-3.5 w-3.5" />
+                          {experience.location}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-muted-foreground leading-relaxed">
-                  {experience.highlights.map((highlight) => (
-                    <li key={highlight} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-muted-foreground leading-relaxed">
+                    {experience.highlights.map((highlight) => (
+                      <li key={highlight} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </Reveal>
           ))}
         </div>
 
-        <div className="text-center animate-fade-in">
-          <h3 className="text-2xl font-semibold mb-6">Languages</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {languages.map((language) => (
-              <span key={language} className="tech-badge">
-                {language}
-              </span>
-            ))}
+        <Reveal>
+          <div className="text-center">
+            <h3 className="text-2xl font-semibold mb-6">Languages</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {languages.map((language) => (
+                <span key={language} className="tech-badge">
+                  {language}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
