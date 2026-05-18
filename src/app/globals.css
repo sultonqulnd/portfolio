@@ -37,6 +37,8 @@
     --ring: 217 91% 60%;
 
     --radius: 0.75rem;
+    --cursor-x: 50vw;
+    --cursor-y: 50vh;
   }
 }
 
@@ -48,9 +50,19 @@
   body {
     @apply bg-background text-foreground font-sans;
     background:
+      radial-gradient(
+        480px circle at var(--cursor-x) var(--cursor-y),
+        rgba(14, 165, 233, 0.1),
+        transparent 42%
+      ),
       linear-gradient(180deg, rgba(4, 9, 18, 0.96), rgba(4, 9, 18, 1)),
       hsl(var(--background));
     overflow-x: hidden;
+  }
+
+  .has-custom-cursor,
+  .has-custom-cursor * {
+    cursor: none !important;
   }
 
   html {
@@ -117,7 +129,7 @@
 
   .card-hover:hover {
     @apply border-primary/40 shadow-2xl shadow-primary/20;
-    transform: translateY(-8px);
+    transform: translateY(-8px) perspective(1000px) rotateX(1.5deg);
   }
 
   .card-hover:hover::before {
@@ -141,6 +153,19 @@
 
   .site-background {
     @apply pointer-events-none fixed inset-0 -z-10 overflow-hidden;
+  }
+
+  .site-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      520px circle at var(--cursor-x) var(--cursor-y),
+      rgba(125, 211, 252, 0.12),
+      transparent 46%
+    );
+    opacity: 0.9;
+    transition: opacity 180ms ease;
   }
 
   .site-grid {
@@ -191,6 +216,102 @@
       );
   }
 
+  .custom-cursor {
+    @apply pointer-events-none fixed inset-0 z-[80] hidden opacity-0 transition-opacity duration-300;
+  }
+
+  .custom-cursor.is-visible {
+    opacity: 1;
+  }
+
+  .cursor-ring,
+  .cursor-dot,
+  .cursor-trail {
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-radius: 9999px;
+    will-change: transform;
+  }
+
+  .cursor-ring {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(125, 211, 252, 0.78);
+    background:
+      radial-gradient(circle, rgba(14, 165, 233, 0.08), transparent 58%),
+      rgba(255, 255, 255, 0.02);
+    box-shadow:
+      0 0 28px rgba(14, 165, 233, 0.34),
+      inset 0 0 18px rgba(52, 211, 153, 0.12);
+    transition:
+      width 220ms ease,
+      height 220ms ease,
+      border-color 220ms ease,
+      background 220ms ease,
+      box-shadow 220ms ease;
+  }
+
+  .cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #67e8f9, #34d399);
+    box-shadow: 0 0 18px rgba(52, 211, 153, 0.72);
+  }
+
+  .cursor-trail {
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle, rgba(125, 211, 252, 0.75), rgba(52, 211, 153, 0.05) 68%, transparent);
+    filter: blur(0.2px);
+  }
+
+  .custom-cursor.is-hovering .cursor-ring {
+    width: 72px;
+    height: 72px;
+    border-color: rgba(52, 211, 153, 0.9);
+    background:
+      radial-gradient(circle, rgba(52, 211, 153, 0.14), transparent 58%),
+      rgba(14, 165, 233, 0.06);
+    box-shadow:
+      0 0 36px rgba(52, 211, 153, 0.36),
+      inset 0 0 24px rgba(125, 211, 252, 0.16);
+  }
+
+  .custom-cursor.is-hovering .cursor-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-cursor.is-pressed .cursor-ring {
+    width: 34px;
+    height: 34px;
+    border-color: rgba(251, 191, 36, 0.9);
+    box-shadow: 0 0 42px rgba(251, 191, 36, 0.38);
+  }
+
+  .magnetic-button {
+    @apply relative overflow-hidden;
+  }
+
+  .magnetic-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 18%,
+      rgba(255, 255, 255, 0.22) 42%,
+      transparent 62%
+    );
+    transform: translateX(-120%);
+    transition: transform 700ms ease;
+  }
+
+  .magnetic-button:hover::after {
+    transform: translateX(120%);
+  }
+
   .hero-shell {
     @apply relative rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 shadow-2xl shadow-primary/10 backdrop-blur-md md:p-10;
   }
@@ -215,6 +336,37 @@
 
   .timeline-line {
     background: linear-gradient(to bottom, transparent, hsl(var(--primary)), transparent);
+  }
+
+  .hero-orbit {
+    position: absolute;
+    inset: 7%;
+    border: 1px solid rgba(125, 211, 252, 0.1);
+    border-radius: 9999px;
+    animation: orbit-spin 28s linear infinite;
+  }
+
+  .hero-orbit::before,
+  .hero-orbit::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 9999px;
+    background: #67e8f9;
+    box-shadow: 0 0 26px #67e8f9;
+  }
+
+  .hero-orbit::before {
+    left: 14%;
+    top: 8%;
+  }
+
+  .hero-orbit::after {
+    bottom: 12%;
+    right: 18%;
+    background: #34d399;
+    box-shadow: 0 0 26px #34d399;
   }
 }
 
@@ -264,6 +416,21 @@
   }
 }
 
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -272,5 +439,9 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
   }
 }

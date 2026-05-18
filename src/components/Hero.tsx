@@ -42,6 +42,7 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
+      <div className="hero-orbit" aria-hidden="true" />
       <div className="container-width section-padding text-center relative z-10">
         <div className="animate-fade-in">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-cyan-100 shadow-lg shadow-primary/10 backdrop-blur">
@@ -67,7 +68,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
               size="lg"
-              className="group"
+              className="magnetic-button group"
               onClick={() =>
                 document
                   .querySelector("#contact")
@@ -77,7 +78,12 @@ const Hero = () => {
               <Mail className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
               Get In Touch
             </Button>
-            <Button variant="outline" size="lg" className="group" asChild>
+            <Button
+              variant="outline"
+              size="lg"
+              className="magnetic-button group"
+              asChild
+            >
               <a href="/Resume.pdf" download>
                 <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 Download Resume

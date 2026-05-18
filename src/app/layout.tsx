@@ -6,7 +6,11 @@ import { ToasterProvider } from "@/components/ToasterProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const siteUrl = "https://sultonqul.uz";
+const previewImage = `${siteUrl}/portfolio.png`;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Sultonqul Nortoyloqov - Senior Frontend Engineer",
   description:
     "Senior Frontend Engineer specializing in React, TypeScript, Next.js, Vue, enterprise dashboards, ERP systems, and SEO-focused web portals.",
@@ -16,12 +20,23 @@ export const metadata: Metadata = {
     description:
       "Senior Frontend Engineer specializing in React, TypeScript, Next.js, Vue, enterprise dashboards, ERP systems, and SEO-focused web portals.",
     type: "website",
-    images: ["https://lovable.dev/opengraph-image-p98pqg.png"],
+    url: siteUrl,
+    images: [
+      {
+        url: previewImage,
+        width: 1200,
+        height: 630,
+        alt: "Sultonqul Nortoyloqov portfolio preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@sultonqul_dev",
-    images: ["https://lovable.dev/opengraph-image-p98pqg.png"],
+    title: "Sultonqul Nortoyloqov - Senior Frontend Engineer",
+    description:
+      "Senior Frontend Engineer specializing in React, TypeScript, Next.js, Vue, enterprise dashboards, ERP systems, and SEO-focused web portals.",
+    images: [previewImage],
   },
 };
 
