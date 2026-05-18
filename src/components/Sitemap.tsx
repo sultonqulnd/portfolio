@@ -25,6 +25,12 @@ const Sitemap = () => {
           priority: "0.9",
         },
         {
+          loc: "https://sultonqul.uz/#engineering-focus",
+          lastmod: new Date().toISOString(),
+          changefreq: "monthly",
+          priority: "0.9",
+        },
+        {
           loc: "https://sultonqul.uz/#skills",
           lastmod: new Date().toISOString(),
           changefreq: "monthly",

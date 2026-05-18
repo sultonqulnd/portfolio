@@ -1,0 +1,132 @@
+export const siteConfig = {
+  name: "Sultonqul Nortoyloqov",
+  title: "Sultonqul Nortoyloqov - Senior Frontend Engineer",
+  description:
+    "Senior Frontend Engineer in Tashkent specializing in React, TypeScript, Next.js, Vue, SaaS dashboards, ERP systems, CRM platforms, admin panels, fintech, healthcare, edtech, real estate software, and SEO-focused web portals.",
+  url: "https://sultonqul.uz",
+  image: "/portfolio.png",
+  email: "sultonqulnd@gmail.com",
+  phone: "+998916441100",
+  location: "Tashkent, Uzbekistan",
+  locale: "en_US",
+  languages: ["Uzbek", "English", "Russian"],
+  sameAs: [
+    "https://github.com/sultonqulnd",
+    "https://linkedin.com/in/sultonqul",
+    "https://t.me/sultonqul",
+  ],
+  services: [
+    "Frontend architecture",
+    "React and Next.js development",
+    "TypeScript application development",
+    "Vue and Nuxt.js development",
+    "SaaS dashboard development",
+    "Enterprise dashboard development",
+    "ERP interface development",
+    "CRM interface development",
+    "Admin panel development",
+    "Fintech web application development",
+    "Healthcare web platform development",
+    "Edtech platform development",
+    "Real estate software frontend development",
+    "Data visualization dashboards",
+    "Role-based access control interfaces",
+    "Responsive web application development",
+    "SEO-focused web portals",
+    "Frontend performance optimization",
+  ],
+  industries: [
+    "SaaS",
+    "Fintech",
+    "Healthtech",
+    "Edtech",
+    "Real estate technology",
+    "Pharmaceutical technology",
+    "Government digital services",
+    "Marketplace platforms",
+    "Enterprise resource planning",
+    "Customer relationship management",
+  ],
+  faqs: [
+    {
+      question: "Who is Sultonqul Nortoyloqov?",
+      answer:
+        "Sultonqul Nortoyloqov is a Senior Frontend Engineer based in Tashkent, Uzbekistan, specializing in React, TypeScript, Next.js, Vue, enterprise dashboards, ERP systems, admin panels, and SEO-focused web portals.",
+    },
+    {
+      question: "What technologies does Sultonqul Nortoyloqov work with?",
+      answer:
+        "He works with JavaScript, TypeScript, React, Next.js, Vue.js, Nuxt.js, TailwindCSS, Redux, Zustand, React Query, GraphQL, REST APIs, WebSockets, Node.js, Nest.js, MongoDB, PostgreSQL, CI/CD, and frontend performance optimization.",
+    },
+    {
+      question: "What kind of projects has Sultonqul Nortoyloqov built?",
+      answer:
+        "His portfolio includes ERP systems, CRM dashboards, SaaS admin panels, real estate management systems, pharmaceutical platforms, university websites, HRM tools, service marketplaces, fintech-style comparison portals, healthcare booking platforms, and SEO-focused web portals.",
+    },
+    {
+      question: "What industries does Sultonqul Nortoyloqov have frontend experience in?",
+      answer:
+        "He has frontend engineering experience across SaaS, fintech, healthcare, edtech, real estate, pharmaceutical platforms, marketplaces, enterprise ERP, CRM, HRM, and government digital service products.",
+    },
+    {
+      question: "Can Sultonqul Nortoyloqov build enterprise dashboards and admin panels?",
+      answer:
+        "Yes. He has built enterprise dashboards, admin panels, ERP interfaces, CRM workflows, role-based access control systems, Kanban boards, real-time data visualizations, payment workflows, warehouse inventory interfaces, and Excel/PDF export flows.",
+    },
+    {
+      question: "Is Sultonqul Nortoyloqov available for frontend engineering opportunities?",
+      answer:
+        "Yes. The portfolio provides direct contact options for senior frontend engineering opportunities, freelance projects, and collaboration requests.",
+    },
+  ],
+  keywords: [
+    "Sultonqul Nortoyloqov",
+    "Sultonqul",
+    "Senior Frontend Engineer",
+    "Senior Frontend Developer",
+    "Frontend Architect",
+    "Frontend Consultant",
+    "Software Engineer Uzbekistan",
+    "JavaScript Developer Uzbekistan",
+    "Frontend Engineer Uzbekistan",
+    "Frontend Developer Tashkent",
+    "Frontend Engineer Tashkent",
+    "React Developer Tashkent",
+    "React Developer Uzbekistan",
+    "Next.js Developer Uzbekistan",
+    "Next.js Developer Tashkent",
+    "TypeScript Developer",
+    "TypeScript Engineer",
+    "Vue Developer",
+    "Nuxt.js Developer",
+    "JavaScript Engineer",
+    "SaaS Frontend Developer",
+    "SaaS Dashboard Developer",
+    "Fintech Frontend Developer",
+    "Healthcare Frontend Developer",
+    "Healthtech Web Developer",
+    "Edtech Frontend Developer",
+    "Real Estate Software Developer",
+    "CRM Dashboard Developer",
+    "ERP Dashboard Developer",
+    "ERP Frontend Developer",
+    "Admin Panel Developer",
+    "Enterprise Dashboard Developer",
+    "Data Visualization Frontend Developer",
+    "RBAC Dashboard Developer",
+    "React Admin Dashboard Developer",
+    "Next.js SEO Developer",
+    "SEO Web Portal Developer",
+    "Frontend Performance Optimization",
+    "Responsive Web App Developer",
+    "Web Application Developer Uzbekistan",
+    "Remote Frontend Engineer",
+    "React TypeScript Portfolio",
+    "Web Developer Tashkent",
+  ],
+};
+
+export const absoluteUrl = (path = "") => {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return `${siteConfig.url}${normalizedPath}`;
+};

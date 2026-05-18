@@ -12,3 +12,7 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://sultonqul.uz/sitemap.xml
+LLMs: https://sultonqul.uz/llms.txt
+Host: https://sultonqul.uz
