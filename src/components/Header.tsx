@@ -132,11 +132,6 @@ const Header = () => {
             )}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(52,211,153,0.12),transparent_42%)]" />
-            <div className="relative border-b border-border/70 px-5 py-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-                Navigation
-              </p>
-            </div>
             <div className="relative flex flex-col p-3">
               {navItems.map((item, index) => (
                 <button
