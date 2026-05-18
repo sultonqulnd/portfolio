@@ -1,5 +1,41 @@
 export const projects = [
   {
+    title: "Kliro Web Portal & Admin Dashboard",
+    description:
+      "Built an enterprise web portal for discovering bank services, insurance, airline tickets, and hotels with strong SEO foundations, plus a scalable admin dashboard for managing portal content and operations.",
+    image: "/project_screenshots/kliro.png",
+    tech: ["Next.js", "TypeScript", "SEO", "Dashboard", "Admin Panel"],
+    liveUrl: "https://kliro.uz/",
+    githubUrl: null,
+    featured: false,
+  },
+  {
+    title: "MyCare – Home Care Services Platform",
+    description:
+      "Built the landing page and admin panel for a home-care booking app where users can schedule nurses, nannies, and child massage specialists. Implemented service scheduling, real-time notifications, and admin management features.",
+    image: "/project_screenshots/mycare.png",
+    tech: [
+      "React",
+      "TypeScript",
+      "Scheduling",
+      "Real-time Notifications",
+      "Admin Panel",
+    ],
+    liveUrl: "https://mycare.uz/",
+    githubUrl: null,
+    featured: false,
+  },
+  {
+    title: "iQUB ERP – Real Estate Management System",
+    description:
+      "Developed an enterprise ERP for managing real estate objects, sales, finance, employees, CRM workflows, warehouse inventory, and automated reporting. Built 500+ components across 100+ pages with RBAC, dynamic routing, 12+ user roles, Kanban lead management, payment processing, debt management, real-time dashboards, and Excel/PDF exports.",
+    image: "/project_screenshots/iqub.png",
+    tech: ["React", "TypeScript", "ERP", "RBAC", "CRM", "Data Visualization"],
+    liveUrl: "https://iqub.uz/",
+    githubUrl: null,
+    featured: false,
+  },
+  {
     title: "PTU Website & Admin Dashboard",
     description:
       "Designed and developed the official university site and its admin panel to manage content and internal workflows. A comprehensive solution for educational institution management.",
@@ -7,7 +43,7 @@ export const projects = [
     tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Admin Panel"],
     liveUrl: "https://ptu.uz/",
     githubUrl: null,
-    featured: true,
+    featured: false,
   },
   {
     title: "SRMS – Student Record Management System",
@@ -69,7 +105,7 @@ export const projects = [
     ],
     liveUrl: "https://eduon.uz/",
     githubUrl: null,
-    featured: true,
+    featured: false,
   },
   {
     title: "KeshTrade Website & CRM",

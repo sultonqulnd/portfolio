@@ -37,9 +37,10 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I&apos;m a passionate frontend developer specializing in React,
-            TypeScript, and modern web technologies. I love creating intuitive
-            user interfaces and bringing ideas to life through code.
+            I&apos;m a frontend engineer based in Tashkent, building
+            production-ready web platforms with React, TypeScript, Next.js, and
+            Vue. My work spans ERP systems, admin dashboards, landing pages, and
+            high-traffic service portals.
           </p>
         </header>
 
@@ -53,7 +54,7 @@ const About = () => {
                     <Code className="h-12 w-12 text-primary" />
                   </div>
                   <p className="text-2xl font-semibold">Frontend</p>
-                  <p className="text-muted-foreground">Developer</p>
+                  <p className="text-muted-foreground">Engineer</p>
                 </div>
               </div>
             </div>
@@ -61,18 +62,16 @@ const About = () => {
 
           <article className="space-y-6 animate-fade-in">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My journey in web development started with a curiosity about how
-              websites work, and has evolved into a deep passion for creating
-              seamless, intuitive user experiences. I believe that great
-              software is not just functional, but also beautiful and accessible
-              to everyone.
+              Since 2020, I&apos;ve worked across enterprise products,
+              education, pharmaceuticals, finance-oriented portals, and
+              service marketplaces. I focus on clean architecture, accessible
+              interfaces, performance, and maintainable component systems.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Based in Tashkent, Uzbekistan, I enjoy working with modern
-              technologies like React, Next.js, and TypeScript to build scalable
-              applications. When I&apos;m not coding, you&apos;ll find me
-              exploring new technologies and contributing to the developer
-              community.
+              I&apos;ve also mentored 400+ frontend students at Najot
+              Ta&apos;lim, helping them grow through hands-on projects, code
+              reviews, debugging sessions, interview preparation, and
+              production-level engineering practices.
             </p>
 
             <div
@@ -84,9 +83,12 @@ const About = () => {
                 "React",
                 "TypeScript",
                 "Next.js",
+                "Vue.js",
+                "Nuxt.js",
                 "TailwindCSS",
                 "Redux",
                 "React Query",
+                "GraphQL",
               ].map((tech) => (
                 <span key={tech} className="tech-badge" role="listitem">
                   {tech}

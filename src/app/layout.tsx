@@ -7,14 +7,14 @@ import { ToasterProvider } from "@/components/ToasterProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sultonqul Nortoyloqov - Senior Frontend Developer",
+  title: "Sultonqul Nortoyloqov - Senior Frontend Engineer",
   description:
-    "Senior Frontend Developer specializing in React, TypeScript, and modern web technologies. Portfolio showcasing innovative projects and technical expertise.",
+    "Senior Frontend Engineer specializing in React, TypeScript, Next.js, Vue, enterprise dashboards, ERP systems, and SEO-focused web portals.",
   authors: [{ name: "Sultonqul Nortoyloqov" }],
   openGraph: {
-    title: "Sultonqul Nortoyloqov - Senior Frontend Developer",
+    title: "Sultonqul Nortoyloqov - Senior Frontend Engineer",
     description:
-      "Senior Frontend Developer specializing in React, TypeScript, and modern web technologies. Portfolio showcasing innovative projects and technical expertise.",
+      "Senior Frontend Engineer specializing in React, TypeScript, Next.js, Vue, enterprise dashboards, ERP systems, and SEO-focused web portals.",
     type: "website",
     images: ["https://lovable.dev/opengraph-image-p98pqg.png"],
   },

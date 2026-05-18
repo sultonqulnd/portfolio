@@ -41,7 +41,7 @@ const Contact = () => {
         subject: formData.subject,
         message: formData.message,
         time: new Date().toLocaleString(),
-        to_email: "me@sultonqul.uz",
+        to_email: "sultonqulnd@gmail.com",
       };
 
       // Send email using EmailJS
@@ -63,7 +63,7 @@ const Contact = () => {
       toast({
         title: "Failed to send message",
         description:
-          "Please try again or contact me directly at me@sultonqul.uz",
+          "Please try again or contact me directly at sultonqulnd@gmail.com",
         variant: "destructive",
       });
     } finally {
@@ -75,8 +75,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "me@sultonqul.uz",
-      href: "mailto:me@sultonqul.uz",
+      value: "sultonqulnd@gmail.com",
+      href: "mailto:sultonqulnd@gmail.com",
     },
     {
       icon: Phone,
@@ -102,7 +102,7 @@ const Contact = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have a project in mind or want to discuss opportunities? I&apos;d
             love to hear from you and explore how we can create something
-            amazing together.
+            reliable, scalable, and production-ready together.
           </p>
         </div>
 

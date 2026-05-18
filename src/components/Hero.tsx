@@ -1,6 +1,13 @@
 "use client";
 
-import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Download,
+  ArrowDown,
+  Send,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -31,12 +38,12 @@ const Hero = () => {
             <span className="gradient-text">Sultonqul Nortoyloqov</span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
-            Frontend Developer
+            Senior Frontend Engineer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-            Crafting exceptional digital experiences with modern web
-            technologies. Passionate about React, TypeScript, and building
-            innovative solutions that make a difference.
+            Frontend engineer building scalable React, Next.js, Vue, and
+            TypeScript products, from enterprise ERP dashboards to SEO-focused
+            web portals and admin systems.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -72,7 +79,16 @@ const Hero = () => {
                 href: "https://linkedin.com/in/sultonqul",
                 label: "LinkedIn",
               },
-              { icon: Mail, href: "mailto:me@sultonqul.uz", label: "Email" },
+              {
+                icon: Send,
+                href: "https://t.me/sultonqul",
+                label: "Telegram",
+              },
+              {
+                icon: Mail,
+                href: "mailto:sultonqulnd@gmail.com",
+                label: "Email",
+              },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}

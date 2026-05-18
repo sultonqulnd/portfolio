@@ -1,13 +1,17 @@
-
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/sultonqulnd', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/sultonqul', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:me@sultonqul.uz', label: 'Email' }
+    { icon: Github, href: "https://github.com/sultonqulnd", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/in/sultonqul",
+      label: "LinkedIn",
+    },
+    { icon: Send, href: "https://t.me/sultonqul", label: "Telegram" },
+    { icon: Mail, href: "mailto:sultonqulnd@gmail.com", label: "Email" },
   ];
 
   return (
@@ -17,7 +21,7 @@ const Footer = () => {
           <div className="text-2xl font-bold gradient-text">
             Sultonqul Nortoyloqov
           </div>
-          
+
           <div className="flex space-x-6">
             {socialLinks.map(({ icon: Icon, href, label }) => (
               <a
@@ -35,7 +39,7 @@ const Footer = () => {
 
           <div className="text-center text-muted-foreground">
             <p className="flex items-center justify-center gap-1">
-              © {currentYear} Sultonqul Nortoyloqov. Made with <Heart className="h-4 w-4 text-red-500" /> using React & TypeScript
+              © {currentYear} Sultonqul Nortoyloqov
             </p>
           </div>
         </div>

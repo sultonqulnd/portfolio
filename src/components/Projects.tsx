@@ -33,6 +33,9 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  onError={(event) => {
+                    event.currentTarget.src = "/placeholder.svg";
+                  }}
                   className="w-full h-64 object-cover"
                 />
                 {project.featured && (
@@ -93,7 +96,7 @@ const Projects = () => {
         <div className="text-center mt-12">
           <Button variant="outline" size="lg" asChild>
             <a
-              href="mailto:me@sultonqul.uz"
+              href="mailto:sultonqulnd@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
