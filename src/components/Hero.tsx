@@ -40,35 +40,35 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-0 py-24 sm:py-28 md:pt-20"
     >
-      <div className="hero-orbit" aria-hidden="true" />
-      <div className="container-width section-padding text-center relative z-10">
+      <div className="hero-orbit hidden sm:block" aria-hidden="true" />
+      <div className="container-width section-padding relative z-10 w-full text-center">
         <div className="animate-fade-in">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-cyan-100 shadow-lg shadow-primary/10 backdrop-blur">
+          <div className="mx-auto mb-8 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-2 text-center text-xs font-medium leading-snug text-cyan-100 shadow-lg shadow-primary/10 backdrop-blur sm:px-4 sm:text-sm">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-75" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-300" />
             </span>
-            Available for senior frontend opportunities
+            <span>Available for senior frontend opportunities</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="gradient-text">Sultonqul Nortoyloqov</span>
+          <h1 className="mx-auto mb-5 max-w-[10ch] break-words text-[clamp(2.45rem,12vw,4.5rem)] font-bold leading-[0.95] tracking-tight sm:max-w-none md:text-7xl">
+            <span className="gradient-text block">Sultonqul Nortoyloqov</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light">
+          <h2 className="mb-6 text-xl font-light text-muted-foreground sm:text-2xl md:mb-8 md:text-3xl">
             Senior Frontend Engineer
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="mx-auto mb-10 max-w-[34rem] text-base leading-relaxed text-muted-foreground sm:text-lg md:mb-12 md:max-w-2xl md:text-xl">
             Frontend engineer building scalable React, Next.js, Vue, and
             TypeScript products, from enterprise ERP dashboards to SEO-focused
             web portals and admin systems.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="mx-auto mb-12 flex w-full max-w-sm flex-col gap-3 sm:mb-16 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
             <Button
               size="lg"
-              className="magnetic-button group"
+              className="magnetic-button group w-full sm:w-auto"
               onClick={() =>
                 document
                   .querySelector("#contact")
@@ -81,7 +81,7 @@ const Hero = () => {
             <Button
               variant="outline"
               size="lg"
-              className="magnetic-button group"
+              className="magnetic-button group w-full sm:w-auto"
               asChild
             >
               <a href="/Resume.pdf" download>
@@ -91,7 +91,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center gap-4 sm:gap-6">
             {[
               {
                 icon: Github,
@@ -119,7 +119,7 @@ const Hero = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary transition-all duration-300 hover:scale-110 hover:bg-primary/10 group"
+                className="rounded-full border border-border bg-card p-3 transition-all duration-300 hover:scale-110 hover:border-primary hover:bg-primary/10 group"
                 aria-label={label}
               >
                 <Icon className="h-5 w-5 group-hover:text-primary transition-colors" />
@@ -127,7 +127,7 @@ const Hero = () => {
             ))}
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:mt-14 sm:grid-cols-3">
             {stats.map((stat, index) => (
               <div
                 key={stat.label}
@@ -142,7 +142,7 @@ const Hero = () => {
             ))}
           </div>
 
-          <div className="ticker-mask mx-auto mt-10 max-w-4xl overflow-hidden border-y border-border/60 py-4">
+          <div className="ticker-mask mx-auto mt-8 max-w-4xl overflow-hidden border-y border-border/60 py-4 sm:mt-10">
             <div className="ticker-track flex w-max gap-3">
               {[...tickerItems, ...tickerItems].map((item, index) => (
                 <span key={`${item}-${index}`} className="tech-badge">
@@ -155,7 +155,7 @@ const Hero = () => {
 
         <button
           onClick={scrollToNext}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+          className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-bounce sm:block"
           aria-label="Scroll to next section"
         >
           <ArrowDown className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
